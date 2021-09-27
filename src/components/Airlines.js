@@ -3,6 +3,7 @@ import Airline from './Airline'
 import Filter from './Filter'
 import getAirlines from '../services/api'
 import '../styles/blocks/section/section.scss'
+import '../styles/blocks/section/__title/section__title.scss'
 
 export default function Airlines() {
   const [allAirlines, setAirlines] = useState([])
