@@ -7,21 +7,21 @@ import '../styles/blocks/section/__title/section__title.scss'
 import '../styles/blocks/grid/grid.scss'
 
 export default function Airlines() {
-  const [allAirlines, setAirlines] = useState([])
+  const [allAirlines, setAllAirlines] = useState([])
   const [nextAirlinesPack, setNextAirlinePack] = useState([])
 
   useEffect(() => {
     getAirlines()
       .then(res => {
-        setAirlines(res)
-        return res
+        setAllAirlines(res)
+        // render only 40 airlines
+        return res.slice(0, 40)
       })
-      .then(() => {
-        // render first 40 airlines
-        setNextAirlinePack(allAirlines.slice(0, 40))
+      .then(res => {
+        setNextAirlinePack(res)
       })
-      .catch(error => console.log(error))
-  })
+      .catch(error => console.log('Responce failed. Error: ' + error))
+  }, [])
 
   return (
     <>
