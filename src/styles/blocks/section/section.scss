@@ -1,8 +1,25 @@
 .section {
-  background-color: #f9fafb;
-  padding: 0 94px;
+  padding: 67px 94px 0;
+  margin: 0 auto;
+  // (card width * card counter + gap width * gap counter + padding width * padding counter)
+  max-width: (300px * 4 + 16px * 3 + 94px * 2);
 
-  @media (max-width: 1080px) {
-    padding: 0 5%;
+  @media (max-width: 1450px) {
+    padding: 67px 5% 0;
+    max-width: calc(300px * 3 + 16px * 2 + 5% * 2);
+  }
+
+  @media (max-width: 1050px) {
+    max-width: calc(300px * 2 + 16px * 1 + 5% * 2);
+  }
+
+  @media (max-width: 700px) {
+    max-width: calc(300px * 1 + 5% * 2);
+  }
+
+  @media (max-width: 350px) {
+    padding: 67px 2% 0;
+    max-width: none;
+    width: 100%;
   }
 }
