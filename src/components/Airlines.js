@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
-import Airline from './Airline'
+import Card from './Card'
 import Filter from './Filter'
 import getAirlines from '../services/api'
 import '../styles/blocks/section/section.scss'
 import '../styles/blocks/section/__title/section__title.scss'
+import '../styles/blocks/grid/grid.scss'
 
 export default function Airlines() {
   const [allAirlines, setAirlines] = useState([])
@@ -17,17 +18,17 @@ export default function Airlines() {
       })
       .then(() => {
         // render first 40 airlines
-        setNextAirlinePack(allAirlines.slice(0, 39))
+        setNextAirlinePack(allAirlines.slice(0, 40))
       })
       .catch(error => console.log(error))
-  }, [1])
+  })
 
   return (
     <>
       <section className='section'>
         <h1 className='section__title'>Airlines</h1>
         <Filter heading='Filter by airlines' />
-        {nextAirlinesPack && nextAirlinesPack.map((airlineData, index) => <Airline data={airlineData} key={index} />)}
+        <ul className='grid'>{nextAirlinesPack && nextAirlinesPack.map((airlineData, index) => <Card data={airlineData} key={index} />)}</ul>
       </section>
     </>
   )

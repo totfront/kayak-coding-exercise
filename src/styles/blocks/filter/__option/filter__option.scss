@@ -1,0 +1,9 @@
+.filter__option {
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  color: #192024;
+  &:not(:last-child) {
+    margin-right: 24px;
+  }
+}
