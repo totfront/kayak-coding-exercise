@@ -1,4 +1,8 @@
 .section {
   background-color: #f9fafb;
   padding: 0 94px;
+
+  @media (max-width: 1080px) {
+    padding: 0 5%;
+  }
 }

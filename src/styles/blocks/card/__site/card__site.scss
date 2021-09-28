@@ -1,0 +1,16 @@
+.card__site {
+  font-size: 14px;
+  font-weight: normal;
+  color: #5a6972;
+  text-decoration: none;
+  transition: all 0.5s;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  max-width: 240px;
+  display: inline-block;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
