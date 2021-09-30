@@ -8,6 +8,10 @@
     margin-right: 24px;
   }
 
+  &:hover {
+    opacity: 0.7;
+  }
+
   @media (max-width: 700px) {
     &:not(:last-child) {
       margin-bottom: 15px;

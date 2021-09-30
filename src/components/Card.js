@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import minimiseUrl from '../services/minimiseUrl'
-// import SmoothRender from 'react-smooth-render'
+import SmoothRender from 'react-smooth-render'
 
 import '../styles/blocks/card/card.scss'
 import '../styles/blocks/card/__title/card__title.scss'
@@ -31,11 +31,11 @@ export default function Card(props) {
                 {phone}
               </a>
             </address>
-            {/* <SmoothRender hidden={!cardOnHover} timing={300}> */}
-            <a href={`${site}`} className='card__site'>
-              {siteUrl}
-            </a>
-            {/* </SmoothRender> */}
+            <SmoothRender hidden={!cardOnHover} timing={700}>
+              <a href={`${site}`} className='card__site'>
+                {siteUrl}
+              </a>
+            </SmoothRender>
           </>
         )}
       </article>
