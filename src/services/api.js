@@ -1,5 +1,5 @@
 import fetchJsonp from 'fetch-jsonp'
-export default function getAirlines(setAirlines) {
+export default function getAirlines() {
   return fetchJsonp('https://www.kayak.com/h/mobileapis/directory/airlines/homework', {
     jsonpCallback: 'jsonp'
   })
@@ -10,10 +10,4 @@ export default function getAirlines(setAirlines) {
       return res
     })
     .catch(error => console.log(error))
-
-  // .then(fetchedData => {
-  //   updateData(fetchedData)
-  //   updateState(true)
-  //   updateUnfilteredData(fetchedData)
-  // })
 }

@@ -8,17 +8,16 @@ import '../styles/blocks/grid/grid.scss'
 
 export default function Airlines() {
   const [allAirlines, setAllAirlines] = useState([])
-  const [nextAirlinesPack, setNextAirlinePack] = useState([])
+  const [airlinePack, setAirlinePack] = useState([])
 
   useEffect(() => {
     getAirlines()
       .then(res => {
         setAllAirlines(res)
-        // render only 40 airlines
-        return res.slice(0, 40)
+        return res
       })
       .then(res => {
-        setNextAirlinePack(res)
+        setAirlinePack(res)
       })
       .catch(error => console.log('Responce failed. Error: ' + error))
   }, [])
@@ -27,8 +26,8 @@ export default function Airlines() {
     <>
       <section className='section'>
         <h1 className='section__title'>Airlines</h1>
-        <Filter heading='Filter by airlines' />
-        <ul className='grid'>{nextAirlinesPack && nextAirlinesPack.map((airlineData, index) => <Card data={airlineData} key={index} />)}</ul>
+        <Filter allAirlines={allAirlines} setAirlinePack={setAirlinePack} heading='Filter by Alliances' />
+        <ul className='grid'>{airlinePack.lenght !== 0 ? airlinePack.map((airlineData, index) => <Card data={airlineData} key={index} />) : ''}</ul>
       </section>
     </>
   )
