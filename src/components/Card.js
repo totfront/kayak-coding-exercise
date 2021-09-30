@@ -15,10 +15,8 @@ export default function Card(props) {
   const [cardOnHover, setCardOnHover] = useState(false)
 
   useEffect(() => {
-    if (props.data) {
-      minimiseUrl(siteUrl, setSiteUrl)
-    }
-  }, [])
+    minimiseUrl(siteUrl, setSiteUrl)
+  }, [props.data, siteUrl])
 
   return (
     <li className='card' onMouseOver={() => setCardOnHover(true)} onMouseLeave={() => setCardOnHover(false)}>
