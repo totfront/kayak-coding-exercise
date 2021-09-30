@@ -57,7 +57,7 @@ export default function Filter(props) {
           <label className='filter__option'>
             <input className='filter__form-input' onChange={handleChange} type='radio' name='filter' value='Star Alliance' />
             <span className='filter__form-input-prepend' />
-            Sky Alliance
+            Star Alliance
           </label>
         </form>
       </div>
